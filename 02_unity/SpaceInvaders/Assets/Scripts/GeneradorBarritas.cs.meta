@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: b0a232b5724fd3444aebbde7a6bff0c8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - prefabBarritaRoja: {fileID: 8405795838348602729, guid: 042fb8ce93e4e7d448e8c4e84f782419,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
