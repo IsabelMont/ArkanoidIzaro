@@ -15,7 +15,8 @@ public class ControlBarrera : MonoBehaviour
     // Acceso al prefab de la bola
     public Rigidbody2D bola;
 
-
+    private Rigidbody2D bolita;
+    
     // Use this for initialization
     void Start()
     {
@@ -26,9 +27,6 @@ public class ControlBarrera : MonoBehaviour
     void Update()
     {
         
-         // CREO LA BOLA:              
-         // Instanciamos el objeto partiendo del prefab
-         Rigidbody2D bolita = (Rigidbody2D)Instantiate(bola, transform.position, transform.rotation);
         
 
         // Calculamos la anchura visible de la cámara en pantalla
@@ -72,8 +70,9 @@ public class ControlBarrera : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // CONTROLO QUE SOLO HAYA EN PANTALLA UNA BOLA
-            if bolita 
-            disparar(bolita);
+            if (bolita == null) {
+                disparar(bola);
+            }
         }
     }
 
@@ -81,15 +80,18 @@ public class ControlBarrera : MonoBehaviour
     {
         // Hacemos copias del prefab de la bola y las lanzamos
         //Rigidbody2D d = (Rigidbody2D)Instantiate(bola, transform.position, transform.rotation);
+              
+        // Instanciamos el objeto partiendo del prefab
+        bolita = (Rigidbody2D)Instantiate(bola, transform.position, transform.rotation);
 
         // Desactivar la gravedad para este objeto, si no, ¡se cae!
-        bola.gravityScale = 0;
+        bolita.gravityScale = 0;
 
         // Posición de partida, en la punta de la barrera
-        bola.transform.Translate(Vector2.up * 0.7f);
+        bolita.transform.Translate(Vector2.up * 0.7f);
 
         // Lanzarlo
-        bola.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
+        bolita.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
     }
 
 
