@@ -14,9 +14,12 @@ public class ControlBola : MonoBehaviour
     void Update()
     {
         // Eliminamos el objeto si se sale de la pantalla
-        if (transform.position.y > 10)
+        if (transform.position.y > 10 || transform.position.y < -5)
         {
             Destroy(gameObject);
         }
+
+
+       
     }
 }

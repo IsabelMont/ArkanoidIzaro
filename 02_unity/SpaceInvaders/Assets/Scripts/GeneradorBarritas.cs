@@ -12,8 +12,10 @@ public class GeneradorBarritas : MonoBehaviour
     private Rigidbody2D[,] barritas;
 
     // Tamaño de las barritas
-    private const int FILAS = 4;
-    private const int COLUMNAS = 7;
+    //private const int FILAS = 4;
+    //private const int COLUMNAS = 7;
+    private const int FILAS = 12;
+    private const int COLUMNAS = 29;
 
     // Enumeración para expresar el sentido del movimiento
     //private enum direccion { IZQ, DER };
@@ -35,7 +37,8 @@ public class GeneradorBarritas : MonoBehaviour
     void Start()
     {
         // Rejilla de 4x7 barritas
-        generarBarritas(FILAS, COLUMNAS, 1.5f, 1.0f);
+        //generarBarritas(FILAS, COLUMNAS, 1.5f, 1.0f);
+        generarBarritas(FILAS, COLUMNAS, 0.6f, 0.3f);
 
         // Calculamos la anchura visible de la cámara en pantalla
         float distanciaHorizontal = Camera.main.orthographicSize * Screen.width / Screen.height;
@@ -163,6 +166,7 @@ public class GeneradorBarritas : MonoBehaviour
                 // Escala opcional, por defecto 1.0f (sin escala)
                 // Nota: El prefab original ya está escalado a 0.2f
                 barrita.transform.localScale = new Vector2(1f * escala, 1f * escala);
+
             }
         }
 
